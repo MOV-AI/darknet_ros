@@ -35,19 +35,11 @@ esac
 
 # Make the install dir if it doesn't exist
 WEIGHTS_DIR="/opt/ros/noetic/share/darknet_ros/yolo_network_config/weights"
-mkdir -p "$WEIGHTS_DIR"
-# Download the weights
-FILE="$WEIGHTS_DIR/yolov2-tiny.weights"
-# if the file exists, remove it
-if [ -f "$FILE" ]; then
-    echo "Removing $FILE"
-    rm "$FILE"
-fi
 
-FILE="$WEIGHTS_DIR/yolov3.weights"
-if [ -f "$FILE" ]; then
-    echo "Removing $FILE"
-    rm "$FILE"
+# Remove the weights directory
+if [ -d "$WEIGHTS_DIR" ]; then
+    echo "Removing $WEIGHTS_DIR"
+    rmdir "$WEIGHTS_DIR"
 fi
 
 
