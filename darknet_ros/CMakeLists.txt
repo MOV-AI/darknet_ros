@@ -223,14 +223,6 @@ install(DIRECTORY config launch yolo_network_config
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-# Define a custom command for post-installation
-add_custom_command(
-    TARGET ${PROJECT_NAME}
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E echo "Installation complete!"
-    COMMENT "Running post-installation steps..."
-)
-
 
 
 # # Download yolov2-tiny.weights
