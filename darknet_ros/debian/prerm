@@ -39,7 +39,7 @@ WEIGHTS_DIR="/opt/ros/noetic/share/darknet_ros/yolo_network_config/weights"
 # Remove the weights directory
 if [ -d "$WEIGHTS_DIR" ]; then
     echo "Removing $WEIGHTS_DIR"
-    rmdir "$WEIGHTS_DIR"
+    rm -rf "$WEIGHTS_DIR"
 fi
 
 

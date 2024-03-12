@@ -219,10 +219,13 @@ install(
   FILES_MATCHING PATTERN "*.h"
 )
 
-install(DIRECTORY config launch yolo_network_config/cfg/
+install(DIRECTORY config launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
+install(DIRECTORY yolo_network_config/cfg/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/yolo_network_config/cfg/
+)
 
 # Download yolov2-tiny.weights
 set(PATH "${CMAKE_CURRENT_SOURCE_DIR}/yolo_network_config/weights")
