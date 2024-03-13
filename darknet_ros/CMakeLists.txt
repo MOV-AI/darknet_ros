@@ -219,8 +219,12 @@ install(
   FILES_MATCHING PATTERN "*.h"
 )
 
-install(DIRECTORY config launch yolo_network_config
+install(DIRECTORY config launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+install(DIRECTORY yolo_network_config/cfg/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/yolo_network_config/cfg/
 )
 
 # Download yolov2-tiny.weights
@@ -240,9 +244,9 @@ if (NOT EXISTS "${FILE}")
   execute_process(COMMAND wget -q https://github.com/leggedrobotics/darknet_ros/releases/download/1.1.4/yolov3.weights -P ${PATH})
 endif()
 
-#############
-## Testing ##
-#############
+############
+# Testing ##
+############
 
 if(CATKIN_ENABLE_TESTING)
   # Download yolov2.weights
