@@ -1,5 +1,5 @@
 #!/bin/sh
-# preinst script for helloworld
+# preinst script for darknet_ros
 #
 # see: dh_installdeb(1)
 
